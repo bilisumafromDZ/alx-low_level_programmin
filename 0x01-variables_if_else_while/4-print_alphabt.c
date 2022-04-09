@@ -9,6 +9,8 @@ int main(void)
 {
 	
 	char l;
+	char e;
+	char q;
 	l = 'a';
 
 	while (l <= 'z')
@@ -22,4 +24,3 @@ int main(void)
 	}
 	return (0);
 }
-
