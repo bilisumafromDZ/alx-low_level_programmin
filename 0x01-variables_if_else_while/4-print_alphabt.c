@@ -9,14 +9,14 @@ int main(void)
 {
 	
 	char l;
+	
 	l = 'a';
 
 	while (l <= 'z')
 	{
-		if( l != 'q' && l != 'e')
+		if ( l != 'q' && l != 'e')
 		{
 			putchar(l);
-			putchar('\n');
 			l++;
 		}
 		else 
@@ -25,5 +25,6 @@ int main(void)
 		}
 
 	}
+	putchar('\n');
 	return (0);
 }
