@@ -1,13 +1,14 @@
 #include<stdio.h>
 
 /**
- * main - prints 
+ * main - prints
  *
  * return: always (success)
  */
-int main (void)
+int main(void)
 {
 	int c, i;
+
 	for (c = '0'; c <= '9'; c++)
 	{
 		for (i = '0'; i <= '9'; i++)
@@ -26,6 +27,7 @@ int main (void)
 		}
 	}
 	putchar('\n');
+
 	return (0);
 }	
 
