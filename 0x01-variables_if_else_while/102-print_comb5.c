@@ -7,41 +7,43 @@
  */
 int main(void)
 {
-	int i = 48, j = 48, k = 48, l = 49;
+	int i, j, k, l;
 
-	while (i < 58)
+	i = j = k = 48; l = 49;
+	while  ((i < 58))
 	{
-		while (j < 58)
+		putchar(i); putchar(j); putchar(32); putchar(k); putchar(l);
+		if ((i == 57) && (j == 56) && (k == 57) && (l == 57))
 		{
-
-			while (k < 58)
-			{
-				while (l < 58)
-				{
-					putchar(i);
-					putchar(j);
-					putchar(' ');
-					putchar(k);
-					putchar(l);
-					if (!(i == 57 && j == 56 && k == 57 && l == 57))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					l++;
-				}
-				l = 48;
-				k++;
-			}
-			j++;
-			l = j + 1;
-			k = i;
+			putchar('\n'); i++;
 		}
-		j = 48;
-		i++;
-		k = 1;
-		l = j +1;
+		else
+		{
+			putchar(44); putchar(32);
+			if ((k == 57) && (l == 57))
+			{
+				if (j < 56)
+				{
+					l = ++j + 1; k = i;
+				}
+				else if (j == 56)
+				{
+					j++; k = i + 1; l = 48;
+				}
+				else if (j == 57)
+				{
+					j = 48; l = 49; k = ++i;
+				}
+			}
+			else if (l < 57)
+			{
+				l++;
+			}
+			else
+			{
+				l = 48; k++;
+			}
+		}
 	}
-	putchar('\n');
 	return (0);
 }
