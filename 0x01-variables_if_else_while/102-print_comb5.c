@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
  * main - entry point
@@ -11,14 +11,21 @@ int main(void)
 	int i = 48, j = 48, k = 48, l = 49;
 	while  ((i < 58))
 	{
-		putchar(i); putchar(j); putchar(32); putchar(k); putchar(l);
+		putchar(i);
+	       	putchar(j);
+	       	putchar(32);
+	       	putchar(k);	
+	       	putchar(l);
+
 		if ((i == 57) && (j == 56) && (k == 57) && (l == 57))
 		{
 			putchar('\n'); i++;
 		}
 		else
 		{
-			putchar(44); putchar(32);
+			putchar(44);
+		       	putchar(32);
+
 			if ((k == 57) && (l == 57))
 			{
 				if (j < 56)
