@@ -5,7 +5,7 @@
  *
  * return: Always 0 (success).
  */
-void main(void)
+int main(void)
 {
 	int digit1, digit2;
 
@@ -25,5 +25,7 @@ void main(void)
 	}
 
 	putchar('\n');
+
+	return (0);
 
 }
