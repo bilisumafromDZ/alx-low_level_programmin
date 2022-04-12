@@ -7,26 +7,22 @@
  */
 int main(void)
 {
-	int c, c_two, c_three;
+	int s, t, f, tm, fm;
 
-	for (c = 48; c <= 55; c++)
+	s = 0;
+	for (t = 0; t <= (1024 / 3); t++)
 	{
-		for (c_two = c + 1; c_two <= 56; c_two++)
+		tm = 3 * t;
+		s = s + tm;
+	}
+	for (f = 0; f <= (1024 / 5); f++)
+	{
+		if (!(f % 3 == 0))
 		{
-			for (c_three = c_two + 1; c_three <= 57; c_three++)
-			{
-				putchar(c);
-				putchar(c_two);
-				putchar(c_three);
-				if (c != 55 || c_two != 56 || c_three != 57)
-				{
-					putchar(44);
-					putchar(32);
-				}
-			}
+			fm = 5 * f;
+			s = s + fm;
 		}
 	}
-
-	putchar(10);
+	printf("%i\n", s);
 	return (0);
 }
