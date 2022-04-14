@@ -5,6 +5,7 @@
  *
  * Return: The numbers since 0 up to 9
  */
+
 void print_numbers(void)
 {
 	int x;
@@ -15,4 +16,5 @@ void print_numbers(void)
 	}
 
 	_putchar('\n');
+
 }
