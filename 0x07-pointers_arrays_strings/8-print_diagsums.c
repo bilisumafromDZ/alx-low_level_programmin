@@ -9,7 +9,6 @@
  */
 
 void print_diagsums(int *a, int size)
-
 {
 	int index, sum1 = 0, sum2 = 0;
 
@@ -28,4 +27,4 @@ void print_diagsums(int *a, int size)
 	}
 
 	printf("%d, %d\n", sum1, sum2);
-}									
+}
