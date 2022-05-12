@@ -8,43 +8,44 @@
  *
  * Return: Nothing (void)
  */
+
 void print_all(const char *const format, ...)
 {
-	unsigned int i = 0;
-	char *arg_s;
-	va_list arguments;
+		unsigned int i = 0;
+		char *arg_s;
+		va_list arguments;
 
-	va_start(arguments, format);
-	while (*(format + i) != '\0' && (format))
-	{
-		switch (*(format + i))
+		va_start(arguments, format);
+		while (*(format + i) != '\0' && (format))
 		{
-		case 's':
-			arg_s = va_arg(arguments, char *);
-			if (arg_s == NULL)
+			switch (*(format + i))
 			{
-				printf("(nil)");
+			case 's':
+				arg_s = va_arg(arguments, char *);
+				if (arg_s == NULL)
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", arg_s);
 				break;
+			case 'i':
+				printf("%d", va_arg(arguments, int));
+				break;
+			case 'f':
+				printf("%f", (float) va_arg(arguments, double));
+				break;
+			case 'c':
+				printf("%c", (char) va_arg(arguments, int));
+				break;
+			default:
+				i++;
+				continue;
 			}
-			printf("%s", arg_s);
-			break;
-		case 'i':
-			printf("%d", va_arg(arguments, int));
-			break;
-		case 'f':
-			printf("%f", (float) va_arg(arguments, double));
-			break;
-		case 'c':
-			printf("%c", (char) va_arg(arguments, int));
-			break;
-		default:
+			if (*(format + i + 1) != '\0')
+				printf(", ");
 			i++;
-			continue;
 		}
-		if (*(format + i + 1) != '\0')
-			printf(", ");
-		i++;
-	}
-	printf("\n");
-	va_end(arguments);
+		printf("\n");
+		va_end(arguments);
 }
