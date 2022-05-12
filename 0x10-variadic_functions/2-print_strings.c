@@ -14,27 +14,22 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list strings;
-	char *str;
-	unsigned int index
+	unsigned int i = 0;
+	va_list arguments;
+	char *p;
 
-	va_start(strings, n);
-
-	for (index = 0; index < n; index++)
+	va_start(arguments, n);
+	for (i = 0; i < n; i++)
 	{
-		str = va_arg(strings, char *);
-
-		if (str == NULL)
+		p = va_arg(arguments, char *);
+		if (p == NULL)
 			printf("(nil)");
 		else
-			printf("%s", str);
+			printf("%s", p);
 
-		if (index != (n - 1) && separator != NULL)
+		if (separator != NULL && i < (n - 1))
 			printf("%s", separator);
 	}
-
 	printf("\n");
-
-	va_end(strings);
-
+	va_end(arguments);
 }
